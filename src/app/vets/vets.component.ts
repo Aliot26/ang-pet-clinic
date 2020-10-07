@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Vets } from './vets';
+import {VetsService} from '../services/vets.service';
+import {Router} from '@angular/router';
+
 
 @Component({
   selector: 'app-vets',
@@ -7,9 +11,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VetsComponent implements OnInit {
 
-  constructor() { }
+  vets: Vets[];
+
+  constructor(private vetsService: VetsService, private router: Router) { }
 
   ngOnInit(): void {
+    this.vetsService.getVets().subscribe(response => {
+      console.log(response);
+      this.vets = response;
+    });
   }
 
 }
