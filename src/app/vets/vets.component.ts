@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Vets } from './vets';
+import {Specialities} from './specialities';
 import {VetsService} from '../services/vets.service';
 import {Router} from '@angular/router';
 
