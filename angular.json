@@ -25,6 +25,18 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/assets/css/about.css",
+              "src/assets/css/about_responsive.css",
+              "src/assets/css/contact.css",
+              "src/assets/css/contact_responsive.css",
+              "src/assets/css/elements.css",
+              "src/assets/css/elements_responsive.css",
+              "src/assets/css/news.css",
+              "src/assets/css/news_responsive.css",
+              "src/assets/css/responsive.css",
+              "src/assets/css/services.css",
+              "src/assets/css/services_responsive.css",
+              "src/assets/css/main_styles.css",
               "src/styles.css"
             ],
             "scripts": [
@@ -124,6 +136,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "ang-pet-clinic"
 }
