@@ -11,7 +11,8 @@
   display: block;
   width: 235px;
   height: 46px;
-  background: url("../../assets/img/paw_logo_green.png") -1px -12px no-repeat;
+  background-color: #32c69a;
+  /*background: url("../../assets/img/paw_logo_green.png") -1px -12px no-repeat;*/
   opacity: 0;
   -moz-transition: opacity 0.12s ease-in-out;
   -webkit-transition: opacity 0.12s ease-in-out;
