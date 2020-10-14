@@ -1,25 +1,32 @@
-<nav class="navbar navbar-expand-lg menu-petclinic">
-  <div class="container">
 
-    <a href="/" ><div class="logo navbar-brand" ></div></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" routerLink="/">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/vets">Vets</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="#">Pricing</a>
-        </li>
-
-      </ul>
+<header class="header" id="header">
+  <div>
+    <div class="header_nav" id="header_nav_pin">
+      <div class="header_nav_inner">
+        <div class="header_nav_container">
+          <div class="container">
+            <div class="row">
+              <a href="/">
+                <div class="logo navbar-brand"></div>
+              </a>
+              <div class="col">
+                <div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
+                  <nav class="main_nav">
+                    <ul class="d-flex flex-row align-items-center justify-content-start">
+                      <li><a routerLink="/">Home</a></li>
+                      <li><a routerLink="/vets">Vets</a></li>
+                      <li><a routerLink="#">Services</a></li>
+                    </ul>
+                  </nav>
+                  <div class="search_content d-flex flex-row align-items-center justify-content-end ml-auto">
+                    <app-login></app-login>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</nav>
+</header>

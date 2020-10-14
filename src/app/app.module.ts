@@ -10,6 +10,8 @@ import {ErrorComponent} from './error/error.component';
 import {WelcomeComponent} from './welcome/welcome.component';
 import {CommonModule} from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
+import {LoginComponent} from './login/login.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,12 +20,15 @@ import {HttpClientModule} from '@angular/common/http';
     MenuComponent,
     VetsComponent,
     ErrorComponent,
-    WelcomeComponent],
+    WelcomeComponent,
+    LoginComponent
+  ],
   imports: [
     BrowserModule,
     CommonModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

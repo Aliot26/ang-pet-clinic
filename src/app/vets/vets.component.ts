@@ -12,6 +12,7 @@ import {Router} from '@angular/router';
 export class VetsComponent implements OnInit {
 
   vets: Vets[];
+  title = 'Our Vets';
 
   constructor(private vetsService: VetsService, private router: Router) { }
 
