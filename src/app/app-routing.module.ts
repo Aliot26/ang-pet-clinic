@@ -10,8 +10,8 @@ import {LoginComponent} from './login/login.component';
 const routes: Routes = [
   {path: '', component: WelcomeComponent},
   {path: 'vets', component: VetsComponent},
-  {path: 'login', component: LoginComponent},
-  {path: '**', component: ErrorComponent}
+  // {path: 'login', component: LoginComponent},
+  {path: 'err', component: ErrorComponent}
 ];
 
 @NgModule({

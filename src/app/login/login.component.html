@@ -1,13 +1,12 @@
 <div class="pull-right">
-  <form class="form-inline">
+  <form >
 
     <div class="row">
+      <div *ngIf="!userLogged" class="form-inline">
       <div class="form-group-sm col-sm-5 ">
         <label for="username" class="sr-only">Email</label>
-
         <input [(ngModel)]="username" type="text" class="form-control-sm" name="username" id="username"
                placeholder="Username" autofocus>
-
       </div>
       <div class="form-group-sm col-sm-5">
         <label for="inputPassword" class="sr-only">Password</label>
@@ -15,6 +14,8 @@
                placeholder="Password">
       </div>
       <button (click)="loginHandle()" type="submit" class=" btn-primary btn-sm col-2">Sign in</button>
+      </div>
+      <button type="submit" class="btn btn-primary mb-2" *ngIf="userLogged">Logout</button>
     </div>
   </form>
   <small *ngIf="invalidLogin">{{errorMessage}}</small>
