@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
     if (this.authentication.authenticate(this.username, this.password)) {
       this.userLogged = true;
       this.router.navigate(['err']);
+
       console.log(this.username);
       console.log(this.password);
     } else {
