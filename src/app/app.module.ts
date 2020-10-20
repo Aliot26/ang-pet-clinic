@@ -13,6 +13,7 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {LoginComponent} from './login/login.component';
 import {FormsModule} from '@angular/forms';
 import {HttpInterceptorAuthService} from './services/http-interceptor-auth.service';
+import { RegisterComponent } from './services/register/register.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {HttpInterceptorAuthService} from './services/http-interceptor-auth.servi
     VetsComponent,
     ErrorComponent,
     WelcomeComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
