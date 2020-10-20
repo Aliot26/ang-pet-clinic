@@ -9,9 +9,10 @@ import {VetsComponent} from './vets/vets.component';
 import {ErrorComponent} from './error/error.component';
 import {WelcomeComponent} from './welcome/welcome.component';
 import {CommonModule} from '@angular/common';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {LoginComponent} from './login/login.component';
 import {FormsModule} from '@angular/forms';
+import {HttpInterceptorAuthService} from './services/http-interceptor-auth.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import {FormsModule} from '@angular/forms';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorAuthService, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule {
