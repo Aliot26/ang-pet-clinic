@@ -17,10 +17,12 @@ export class VetsComponent implements OnInit {
   constructor(private vetsService: VetsService, private router: Router) { }
 
   ngOnInit(): void {
-    this.vetsService.getVets().subscribe(response => {
-      console.log(response);
-      this.vets = response;
-    });
+    this.vetsService.getVets().subscribe(data => {
+      this.vets = data;
+    },
+      err =>{
+      this.vets = JSON.parse(err.error).message;
+      });
   }
 
 }
