@@ -14,6 +14,7 @@ import {LoginComponent} from './login/login.component';
 import {FormsModule} from '@angular/forms';
 import {HttpInterceptorAuthService} from './services/http-interceptor-auth.service';
 import { RegisterComponent } from './services/register/register.component';
+import { AdminBoardComponent } from './admin-board/admin-board.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { RegisterComponent } from './services/register/register.component';
     ErrorComponent,
     WelcomeComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    AdminBoardComponent
   ],
   imports: [
     BrowserModule,
