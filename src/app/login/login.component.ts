@@ -2,7 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {AuthenticationService} from '../services/authentication.service';
 import {TokenStorageService} from '../services/token-storage.service';
-
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { FormGroup, FormControl } from '@angular/forms';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -19,7 +20,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private authService: AuthenticationService,
-    private tokenStorage: TokenStorageService) {
+    private tokenStorage: TokenStorageService,
+    public activeModal: NgbActiveModal) {
   }
 
   ngOnInit(): void {

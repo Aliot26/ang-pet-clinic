@@ -15,11 +15,20 @@
                       <li><a routerLink="/">Home</a></li>
                       <li><a routerLink="/vets">Vets</a></li>
                       <li><a routerLink="/err">Services</a></li>
-                      <li *ngIf="authentication.isUserLogged()"><a routerLink="#">Owner's Page</a></li>
+                      <li><a routerLink="/err"> Owner's Page</a></li>
                     </ul>
                   </nav>
                   <div class="search_content d-flex flex-row align-items-center justify-content-end ml-auto">
-                    <app-login></app-login>
+
+                    <ul class="d-flex flex-row align-items-center justify-content-end">
+                      <li>
+                        <a data-toggle="modal" (click)="openLoginForm()"
+                           data-target="#staticBackdrop">Login</a>
+                      </li>
+                      <li>
+                        <a class="nav-link" (click)="openSignUpForm()">Sign Up</a>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>

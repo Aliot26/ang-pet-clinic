@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthenticationService} from '../services/authentication.service';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {LoginComponent} from '../login/login.component';
+
 
 @Component({
   selector: 'app-menu',
@@ -8,15 +11,22 @@ import {AuthenticationService} from '../services/authentication.service';
 })
 export class MenuComponent implements OnInit {
 
-  // userLogged = false;
 
   constructor(
-    public authentication: AuthenticationService
+    public authentication: AuthenticationService,
+    private modalService: NgbModal
   ) {
   }
 
   ngOnInit(): void {
-    // this.userLogged = this.authentication.isUserLogged();
+
+  }
+
+  openLoginForm(): void {
+    const modalRef = this.modalService.open(LoginComponent);
+  }
+
+  openSignUpForm(): void {
   }
 
 }

@@ -11,10 +11,11 @@ import {WelcomeComponent} from './welcome/welcome.component';
 import {CommonModule} from '@angular/common';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {LoginComponent} from './login/login.component';
-import {FormsModule} from '@angular/forms';
 import {HttpInterceptorAuthService} from './services/http-interceptor-auth.service';
-import { RegisterComponent } from './services/register/register.component';
-import { AdminBoardComponent } from './admin-board/admin-board.component';
+
+import {AdminBoardComponent} from './admin-board/admin-board.component';
+import {RegisterComponent} from './register/register.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { AdminBoardComponent } from './admin-board/admin-board.component';
     CommonModule,
     HttpClientModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     FormsModule
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorAuthService, multi: true}],
