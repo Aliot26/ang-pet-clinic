@@ -21,12 +21,15 @@
                   <div class="search_content d-flex flex-row align-items-center justify-content-end ml-auto">
 
                     <ul class="d-flex flex-row align-items-center justify-content-end">
-                      <li>
+                      <li *ngIf="!isLoggedIn">
                         <a data-toggle="modal" (click)="openLoginForm()"
                            data-target="#staticBackdrop">Login</a>
                       </li>
-                      <li>
+                      <li *ngIf="!isLoggedIn">
                         <a class="nav-link" (click)="openSignUpForm()">Sign Up</a>
+                      </li>
+                      <li *ngIf="isLoggedIn">
+                        <a class="nav-link" (click)="signOut()">Sign Out</a>
                       </li>
                     </ul>
                   </div>
