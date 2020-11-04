@@ -1,9 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
 import {AuthenticationService} from '../services/authentication.service';
 import {TokenStorageService} from '../services/token-storage.service';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { FormGroup, FormControl } from '@angular/forms';
+import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -16,7 +15,7 @@ export class LoginComponent implements OnInit {
   isLoginFailed = false;
   errorMessage = '';
   roles: string[] = [];
-
+  data: object;
 
   constructor(
     private authService: AuthenticationService,
@@ -34,12 +33,12 @@ export class LoginComponent implements OnInit {
   onSubmit(): void {
     this.authService.login(this.form).subscribe(
       data => {
-        this.tokenStorage.saveToken(data.accessToken);
+        this.tokenStorage.saveToken(data);
         this.tokenStorage.saveUser(data);
-
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getUser().roles;
+        this.activeModal.close('login success');
         this.reloadPage();
       },
       err => {
