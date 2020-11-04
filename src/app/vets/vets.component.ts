@@ -14,14 +14,15 @@ export class VetsComponent implements OnInit {
   vets: Vets[];
   title = 'Our Vets';
 
-  constructor(private vetsService: VetsService, private router: Router) { }
+  constructor(private vetsService: VetsService, private router: Router) {
+  }
 
   ngOnInit(): void {
     this.vetsService.getVets().subscribe(data => {
-      this.vets = data;
-    },
-      err =>{
-      this.vets = JSON.parse(err.error).message;
+        this.vets = data;
+      },
+      err => {
+        this.vets = JSON.parse(err.error).message;
       });
   }
 

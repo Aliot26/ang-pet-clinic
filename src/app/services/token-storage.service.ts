@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {TOKEN_KEY, USER_KEY} from '../app.costants';
+import {User} from '../users/users';
 
 @Injectable({
   providedIn: 'root'
@@ -9,25 +10,25 @@ export class TokenStorageService {
   constructor() {
   }
 
-  // public signOut(): void {
-  //   window.sessionStorage.clear();
-  // }
+  public signOut(): void {
+    localStorage.clear();
+  }
 
-  public saveToken(token: string): void {
-    window.sessionStorage.removeItem(TOKEN_KEY);
-    window.sessionStorage.setItem(TOKEN_KEY, token);
+  public saveToken(user): void {
+    localStorage.removeItem(TOKEN_KEY);
+    localStorage.setItem(TOKEN_KEY, user['token']);
   }
 
   public getToken(): string {
-    return sessionStorage.getItem(TOKEN_KEY);
+    return localStorage.getItem(TOKEN_KEY);
   }
 
   public saveUser(user): void {
-    window.sessionStorage.removeItem(USER_KEY);
-    window.sessionStorage.setItem(USER_KEY, JSON.stringify(user));
+    localStorage.removeItem(USER_KEY);
+    localStorage.setItem(USER_KEY, user['username']);
   }
 
   public getUser(): any {
-    return JSON.parse(sessionStorage.getItem(USER_KEY));
+    return localStorage.getItem(USER_KEY);
   }
 }

@@ -19,7 +19,7 @@ export class UserService {
   }
 
   getVetBoard(): Observable<any> {
-    return this.http.get(API_URL + 'vet', { responseType: 'text' });
+    return this.http.get(API_URL + 'vets', { responseType: 'text' });
   }
 
   getAdminBoard(): Observable<any> {

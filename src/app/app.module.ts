@@ -11,11 +11,12 @@ import {WelcomeComponent} from './welcome/welcome.component';
 import {CommonModule} from '@angular/common';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {LoginComponent} from './login/login.component';
-import {HttpInterceptorAuthService} from './services/http-interceptor-auth.service';
 
 import {AdminBoardComponent} from './admin-board/admin-board.component';
 import {RegisterComponent} from './register/register.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpInterceptorAuthService} from './services/http-interceptor-auth.service';
+import { UsersComponent } from './users/users.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     WelcomeComponent,
     LoginComponent,
     RegisterComponent,
-    AdminBoardComponent
+    AdminBoardComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
