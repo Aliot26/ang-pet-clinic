@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {AuthenticationService} from '../services/authentication.service';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {LoginComponent} from '../login/login.component';
 import {TokenStorageService} from '../services/token-storage.service';
@@ -29,9 +28,7 @@ export class MenuComponent implements OnInit {
     const modalRef = this.modalService.open(LoginComponent);
     modalRef.result.then((result) => {
       console.log(result);
-
     }).catch((error) => {
-      console.log('errorrrr');
       console.log(error);
     });
   }
@@ -39,8 +36,8 @@ export class MenuComponent implements OnInit {
   openSignUpForm(): void {
   }
 
-  public signOut(): void {
-    window.sessionStorage.clear();
+  logout(): void {
+    this.tokenService.signOut();
     this.isLoggedIn = false;
   }
 }
