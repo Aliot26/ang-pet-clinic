@@ -68,7 +68,7 @@
           <div class="form-group">
             <div class="container-login100-form-btn">
 
-              <button class="login100-form-btn" data-dismiss="modal" type="submit" (click)="onSubmit()">
+              <button class="login100-form-btn"  type="submit" (click)="onSubmit()">
                 Sign in
               </button>
             </div>
@@ -87,7 +87,7 @@
 							Don’t have an account?
 						</span>
 
-            <a href="#" class="txt3">
+            <a data-toggle="modal" data-target="#staticBackdrop1" data-dismiss="modal" (click)="openSignUpForm()" class="txt3">
               Sign up now
             </a>
           </div>

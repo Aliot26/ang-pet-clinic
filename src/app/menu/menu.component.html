@@ -26,7 +26,8 @@
                            data-target="#staticBackdrop">Login</a>
                       </li>
                       <li *ngIf="!isLoggedIn">
-                        <a class="nav-link" (click)="openSignUpForm()">Sign Up</a>
+                        <a data-toggle="modal"  (click)="openSignUpForm()"
+                           data-target="#staticBackdrop1">Sign Up</a>
                       </li>
                       <li *ngIf="isLoggedIn">
                         <a class="nav-link" (click)="logout()">Sign Out</a>

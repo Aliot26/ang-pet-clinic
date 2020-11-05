@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {LoginComponent} from '../login/login.component';
 import {TokenStorageService} from '../services/token-storage.service';
+import {RegisterComponent} from '../register/register.component';
 
 
 @Component({
@@ -25,15 +26,22 @@ export class MenuComponent implements OnInit {
   }
 
   openLoginForm(): void {
-    const modalRef = this.modalService.open(LoginComponent);
-    modalRef.result.then((result) => {
+    const modalAuth = this.modalService.open(LoginComponent);
+    modalAuth.result.then((result) => {
       console.log(result);
     }).catch((error) => {
-      console.log(error);
+      console.log('error login');
     });
   }
 
   openSignUpForm(): void {
+    console.log("hhh");
+    const modalReg = this.modalService.open(RegisterComponent);
+    modalReg.result.then((result) => {
+      console.log("reg");
+    }).catch((error) => {
+      console.log("error register");
+    });
   }
 
   logout(): void {

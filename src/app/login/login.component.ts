@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {AuthenticationService} from '../services/authentication.service';
 import {TokenStorageService} from '../services/token-storage.service';
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import {RegisterComponent} from '../register/register.component';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +22,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private authService: AuthenticationService,
     private tokenStorage: TokenStorageService,
-    public activeModal: NgbActiveModal) {
+    public activeModal: NgbActiveModal,
+    private modalService: NgbModal) {
   }
 
   ngOnInit(): void {
@@ -46,6 +49,16 @@ export class LoginComponent implements OnInit {
         this.isLoginFailed = true;
       }
     );
+  }
+  openSignUpForm():void{
+    console.log("hhh");
+    this.activeModal.dismiss();
+    const modalReg = this.modalService.open(RegisterComponent);
+    modalReg.result.then((result) => {
+      console.log("reg");
+    }).catch((error) => {
+      console.log("error register");
+    });
   }
 
   reloadPage(): void {
