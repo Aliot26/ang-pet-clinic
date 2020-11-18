@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthenticationService} from '../services/authentication.service';
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import {TokenStorageService} from '../services/token-storage.service';
 
 @Component({
   selector: 'app-register',
@@ -15,7 +16,8 @@ export class RegisterComponent implements OnInit {
   errorMessage = '';
 
   constructor(private authService: AuthenticationService,
-              public activeModal: NgbActiveModal) {
+              public activeModal: NgbActiveModal,
+              private tokenStorage: TokenStorageService) {
   }
 
   ngOnInit(): void {
@@ -24,9 +26,10 @@ export class RegisterComponent implements OnInit {
   onSubmit(): void {
     this.authService.register(this.form).subscribe(
       data => {
-        console.log(data);
         this.isSuccessful = true;
         this.isSignUpFailed = false;
+        this.tokenStorage.saveToken(data);
+        this.tokenStorage.saveUser(data);
         this.activeModal.close('register success');
         this.reloadPage();
       },

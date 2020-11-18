@@ -35,12 +35,11 @@ export class MenuComponent implements OnInit {
   }
 
   openSignUpForm(): void {
-    console.log("hhh");
     const modalReg = this.modalService.open(RegisterComponent);
     modalReg.result.then((result) => {
-      console.log("reg");
+      console.log('reg');
     }).catch((error) => {
-      console.log("error register");
+      console.log('error register');
     });
   }
 

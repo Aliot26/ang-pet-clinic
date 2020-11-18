@@ -2,7 +2,6 @@
      aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content wrap-login100">
-
       <div class="modal-header text-center">
         <h5 class="modal-title w-100 font-weight-bold login100-form-title" id="staticBackdropLabel1">Sign up</h5>
         <button type="button" class="close" data-dismiss="modal" (click)="activeModal.dismiss('Close click')"
@@ -79,7 +78,7 @@
           <div class="form-group">
             <div class="container-login100-form-btn">
 
-              <button class="login100-form-btn" data-dismiss="modal" type="submit" (click)="onSubmit()">
+              <button class="login100-form-btn" (click)="onSubmit()">
                 Sign up
               </button>
             </div>
@@ -88,9 +87,9 @@
             <div
               class="alert alert-danger"
               role="alert"
-              *ngIf="f.submitted "
+              *ngIf="f.submitted && isSignUpFailed"
             >
-              Login failed: {{ errorMessage }}
+              {{ errorMessage }}
             </div>
           </div>
 

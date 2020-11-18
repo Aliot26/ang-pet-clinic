@@ -68,7 +68,7 @@
           <div class="form-group">
             <div class="container-login100-form-btn">
 
-              <button class="login100-form-btn"  type="submit" (click)="onSubmit()">
+              <button class="login100-form-btn"   (click)="onSubmit()">
                 Sign in
               </button>
             </div>
@@ -79,7 +79,7 @@
               role="alert"
               *ngIf="f.submitted && isLoginFailed"
             >
-              Login failed: {{ errorMessage }}
+              Invalid credentials: {{ errorMessage }}
             </div>
           </div>
           <div class="flex-col-c p-t-170 p-b-40">

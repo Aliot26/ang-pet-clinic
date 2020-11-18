@@ -50,14 +50,15 @@ export class LoginComponent implements OnInit {
       }
     );
   }
-  openSignUpForm():void{
-    console.log("hhh");
+
+  openSignUpForm(): void {
+    console.log('hhh');
     this.activeModal.dismiss();
     const modalReg = this.modalService.open(RegisterComponent);
     modalReg.result.then((result) => {
-      console.log("reg");
+      console.log('reg');
     }).catch((error) => {
-      console.log("error register");
+      console.log('error register');
     });
   }
 
