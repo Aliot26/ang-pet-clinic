@@ -5,11 +5,12 @@ import {ErrorComponent} from './error/error.component';
 import {WelcomeComponent} from './welcome/welcome.component';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserModule} from '@angular/platform-browser';
+import {OwnerDetailsComponent} from './owner-details/owner-details.component';
 
 const routes: Routes = [
   {path: '', component: WelcomeComponent},
   {path: 'vets', component: VetsComponent},
-  // {path: 'login', component: LoginComponent},
+  {path: 'owner', component: OwnerDetailsComponent},
   {path: 'err', component: ErrorComponent}
 ];
 

@@ -17,6 +17,7 @@ import {RegisterComponent} from './register/register.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpInterceptorAuthService} from './services/http-interceptor-auth.service';
 import { UsersComponent } from './users/users.component';
+import { OwnerDetailsComponent } from './owner-details/owner-details.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { UsersComponent } from './users/users.component';
     LoginComponent,
     RegisterComponent,
     AdminBoardComponent,
-    UsersComponent
+    UsersComponent,
+    OwnerDetailsComponent
   ],
   imports: [
     BrowserModule,
