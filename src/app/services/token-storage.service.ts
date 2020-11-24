@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {TOKEN_KEY, USER_KEY} from '../app.costants';
+import {TOKEN_KEY, USER_KEY, USERID_KEY} from '../app.costants';
 import {User} from '../users/users';
 
 @Injectable({
@@ -30,5 +30,14 @@ export class TokenStorageService {
 
   public getUser(): any {
     return localStorage.getItem(USER_KEY);
+  }
+
+  public saveUserId(user): void {
+    localStorage.removeItem(USERID_KEY);
+    localStorage.setItem(USERID_KEY, user['id']);
+  }
+
+  public getUserId(): any {
+    return localStorage.getItem(USERID_KEY);
   }
 }

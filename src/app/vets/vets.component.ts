@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Vets} from './vets';
+import {Vet} from './vet';
 import {VetsService} from '../services/vets.service';
 import {Router} from '@angular/router';
 
@@ -11,8 +11,8 @@ import {Router} from '@angular/router';
 })
 export class VetsComponent implements OnInit {
 
-  vets: Vets[];
-  title = 'Our Vets';
+  vets: Vet[];
+  title = 'Our Vet';
 
   constructor(private vetsService: VetsService, private router: Router) {
   }

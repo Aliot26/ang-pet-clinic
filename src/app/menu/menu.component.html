@@ -15,7 +15,7 @@
                       <li><a routerLink="/">Home</a></li>
                       <li><a routerLink="/vets">Vets</a></li>
                       <li><a routerLink="/err">Services</a></li>
-                      <li><a routerLink="/owner"> Owner's Page</a></li>
+                      <li *ngIf="isLoggedIn"><a routerLink="/owner/{{userId}}"> Owner's Page</a></li>
                     </ul>
                   </nav>
                   <div class="search_content d-flex flex-row align-items-center justify-content-end ml-auto">

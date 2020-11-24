@@ -1,4 +1,4 @@
-export class Specialities {
+export class Speciality {
   id: number;
   description: string;
 

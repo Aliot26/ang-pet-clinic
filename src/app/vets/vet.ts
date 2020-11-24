@@ -1,18 +1,18 @@
-import {Specialities} from './specialities';
+import {Speciality} from './speciality';
 
-export class Vets {
+export class Vet {
   id: number;
   firstName: string;
   lastName: string;
   photo: string;
-  specialities: Specialities[];
+  specialities: Speciality[];
 
   constructor(
     id: number,
     firstName: string,
     lastName: string,
     photo: string,
-    specialities: Specialities[]
+    specialities: Speciality[]
   ) {
   }
 }

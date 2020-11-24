@@ -4,6 +4,7 @@ import {TokenStorageService} from '../services/token-storage.service';
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import {RegisterComponent} from '../register/register.component';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -23,7 +24,8 @@ export class LoginComponent implements OnInit {
     private authService: AuthenticationService,
     private tokenStorage: TokenStorageService,
     public activeModal: NgbActiveModal,
-    private modalService: NgbModal) {
+    private modalService: NgbModal,
+    private router: Router) {
   }
 
   ngOnInit(): void {
@@ -38,6 +40,8 @@ export class LoginComponent implements OnInit {
       data => {
         this.tokenStorage.saveToken(data);
         this.tokenStorage.saveUser(data);
+        this.tokenStorage.saveUserId(data);
+        console.log(data);
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getUser().roles;

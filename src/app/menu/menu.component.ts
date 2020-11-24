@@ -3,6 +3,7 @@ import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {LoginComponent} from '../login/login.component';
 import {TokenStorageService} from '../services/token-storage.service';
 import {RegisterComponent} from '../register/register.component';
+import {stringify} from 'querystring';
 
 
 @Component({
@@ -12,6 +13,8 @@ import {RegisterComponent} from '../register/register.component';
 })
 export class MenuComponent implements OnInit {
   isLoggedIn = false;
+  username: string;
+  userId: number;
 
   constructor(
     public tokenService: TokenStorageService,
@@ -22,6 +25,9 @@ export class MenuComponent implements OnInit {
   ngOnInit(): void {
     if (this.tokenService.getToken()) {
       this.isLoggedIn = true;
+      this.username = this.tokenService.getUser();
+      this.userId = this.tokenService.getUserId();
+      console.log(this.userId);
     }
   }
 
