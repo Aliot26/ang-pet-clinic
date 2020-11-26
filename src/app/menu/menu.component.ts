@@ -4,6 +4,7 @@ import {LoginComponent} from '../login/login.component';
 import {TokenStorageService} from '../services/token-storage.service';
 import {RegisterComponent} from '../register/register.component';
 import {stringify} from 'querystring';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -18,7 +19,8 @@ export class MenuComponent implements OnInit {
 
   constructor(
     public tokenService: TokenStorageService,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private router: Router
   ) {
   }
 
@@ -27,7 +29,6 @@ export class MenuComponent implements OnInit {
       this.isLoggedIn = true;
       this.username = this.tokenService.getUser();
       this.userId = this.tokenService.getUserId();
-      console.log(this.userId);
     }
   }
 
@@ -52,5 +53,6 @@ export class MenuComponent implements OnInit {
   logout(): void {
     this.tokenService.signOut();
     this.isLoggedIn = false;
+    this.router.navigate(['']);
   }
 }

@@ -6,9 +6,9 @@
 <div class="row-empty-big"></div>
 <div class="row">
   <table class="table table-striped">
-    <tr >
+    <tr>
       <th>Name</th>
-      <td >{{owner.firstName}} {{owner.lastName}}</td>
+      <td>{{owner.firstName}} {{owner.lastName}}</td>
     </tr>
     <tr>
       <th>Address</th>
@@ -36,14 +36,14 @@
   <table class="table table-striped">
 
     <tr>
-      <td valign="top">
+      <td valign="top" *ngFor="let pet of owner.pets">
         <dl class="dl-horizontal">
           <dt>Name</dt>
-          <dd>name</dd>
+          <dd>{{pet.name}}</dd>
           <dt>Birth Date</dt>
-          <dd> birth date</dd>
+          <dd>{{pet.birthDate}}</dd>
           <dt>Type</dt>
-          <dd>type</dd>
+          <dd>{{pet.petType.name}}</dd>
         </dl>
       </td>
       <td valign="top">
