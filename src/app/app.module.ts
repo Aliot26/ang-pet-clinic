@@ -18,6 +18,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpInterceptorAuthService} from './services/http-interceptor-auth.service';
 import { UsersComponent } from './users/users.component';
 import { OwnerDetailsComponent } from './owner-details/owner-details.component';
+import { OwnerFormComponent } from './owner-form/owner-form.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { OwnerDetailsComponent } from './owner-details/owner-details.component';
     RegisterComponent,
     AdminBoardComponent,
     UsersComponent,
-    OwnerDetailsComponent
+    OwnerDetailsComponent,
+    OwnerFormComponent
   ],
   imports: [
     BrowserModule,

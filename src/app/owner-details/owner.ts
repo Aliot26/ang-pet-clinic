@@ -1,4 +1,5 @@
 import {Pet} from './pet';
+import {User} from '../users/users';
 
 export class Owner {
   id: number;
@@ -7,6 +8,7 @@ export class Owner {
   address: string;
   city: string;
   telephone: string;
+  user: User;
   pets: Pet[];
 
   constructor(
@@ -16,6 +18,7 @@ export class Owner {
     address: string,
     city: string,
     telephone: string,
+    user: User,
     pets: Pet[]
   ) {
   }

@@ -9,9 +9,18 @@ import {Owner} from '../owner-details/owner';
 })
 export class OwnerDetailsService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   public getOwnerById(ownerId): Observable<any> {
     return this.http.get<Owner>(`${API_URL}/owners/user/` + ownerId);
+  }
+
+  public getOwnerByOwnerId(ownerId): Observable<any> {
+    return this.http.get<Owner>(`${API_URL}/owners/` + ownerId);
+  }
+
+  public editOwner(owner, id): Observable<any> {
+    return this.http.patch<Owner>(`${API_URL}/owners/` + id, owner);
   }
 }

@@ -10,7 +10,7 @@ import {OwnerDetailsService} from '../services/owner-details.service';
 })
 export class OwnerDetailsComponent implements OnInit {
   id: number;
-  owner: Owner;
+  public owner: Owner;
   title = 'Owner\'s details';
 
   constructor(private router: Router,
