@@ -1,5 +1,5 @@
 import {PetType} from './petType';
-import {Owner} from './owner';
+import {Owner} from '../owner-details/owner';
 
 export class Pet {
   id: number;

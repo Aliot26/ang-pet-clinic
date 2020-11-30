@@ -1,4 +1,4 @@
-import {Pet} from './pet';
+import {Pet} from '../pet-details/pet';
 import {User} from '../users/users';
 
 export class Owner {
