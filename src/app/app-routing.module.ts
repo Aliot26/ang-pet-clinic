@@ -7,12 +7,14 @@ import {HttpClientModule} from '@angular/common/http';
 import {BrowserModule} from '@angular/platform-browser';
 import {OwnerDetailsComponent} from './owner-details/owner-details.component';
 import {OwnerFormComponent} from './owner-form/owner-form.component';
+import {PetFormComponent} from './pet-form/pet-form.component';
 
 const routes: Routes = [
   {path: '', component: WelcomeComponent},
   {path: 'vets', component: VetsComponent},
   {path: 'owner/:id', component: OwnerDetailsComponent},
   {path: 'owner-edit/:id', component: OwnerFormComponent},
+  {path: 'pet-form/:id', component: PetFormComponent},
   {path: 'err', component: ErrorComponent}
 ];
 

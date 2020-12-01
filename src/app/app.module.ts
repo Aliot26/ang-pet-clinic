@@ -19,7 +19,7 @@ import {HttpInterceptorAuthService} from './services/http-interceptor-auth.servi
 import { UsersComponent } from './users/users.component';
 import { OwnerDetailsComponent } from './owner-details/owner-details.component';
 import { OwnerFormComponent } from './owner-form/owner-form.component';
-import { PetDetailsComponent } from './pet-details/pet-details.component';
+import { PetFormComponent } from './pet-form/pet-form.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +35,7 @@ import { PetDetailsComponent } from './pet-details/pet-details.component';
     UsersComponent,
     OwnerDetailsComponent,
     OwnerFormComponent,
-    PetDetailsComponent
+    PetFormComponent
   ],
   imports: [
     BrowserModule,

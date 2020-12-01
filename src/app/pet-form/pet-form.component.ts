@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-pet-details',
-  templateUrl: './pet-details.component.html',
-  styleUrls: ['./pet-details.component.css']
+  templateUrl: './pet-form.component.html',
+  styleUrls: ['./pet-form.component.css']
 })
-export class PetDetailsComponent implements OnInit {
+export class PetFormComponent implements OnInit {
 
   constructor() { }
 
