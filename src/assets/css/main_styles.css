@@ -266,10 +266,11 @@ section {
 }
 
 .button {
-  width: 137px;
+  width: 150px;
   height: 54px;
   background: #32c69a;
   overflow: hidden;
+  border: none;
 }
 
 .button a {
@@ -912,7 +913,8 @@ section {
   width: 100%;
   background: #e5ecf1;
   height: 100%;
-  padding-left: 43px;
+  padding-left: 40px;
+  padding-right: 40px;
   padding-top: 50px;
 }
 

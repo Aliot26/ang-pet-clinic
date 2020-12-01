@@ -1,6 +1,7 @@
 <div class="container">
   <div class="info_form_container">
     <div class="info_form_title">Edit {{owner["firstName"]}} {{owner.lastName}} Details</div>
+    <div class="row-empty-big"></div>
     <form *ngIf="ownerForm" [formGroup]="ownerForm" (submit)="edit(ownerForm)">
 
       <div class="form-group">
@@ -82,9 +83,9 @@
         <!--        >-->
         <!--          Username is required!-->
         <!--        </div>-->
-      </div>
+      </div>s
       <div class="form-group text-center">
-        <button class="info_form_button">Edit Owner Data</button>
+        <button class="services_button button button-without-border"><a><span>Edit Owner Data</span><span>Edit Owner Data</span></a></button>
       </div>
     </form>
   </div>

@@ -1,1 +1,42 @@
-<p>pet-details works!</p>
+<div class="container">
+  <div class="info_form_container">
+    <div class="info_form_title">Add new Pet</div>
+    <div class="row-empty-big"></div>
+    <form [formGroup]="petForm" (submit)="save(petForm)">
+
+      <div class="form-group">
+        <label for="inputName">Name</label>
+        <input type="text" class=" form-control info_input"
+               id="inputName"
+               name="name"
+               formControlName="name"
+               required>
+
+      </div>
+      <div class="form-group">
+        <label>Pet Type</label>
+        <select formControlName="petType" class=" info_input info_select">
+          <option class="opt-height" *ngFor="let type of petTypes" [ngValue]="type">
+            {{type.name}}
+          </option>
+        </select>
+
+      </div>
+
+      <div class="form-group">
+        <label for="inputBirthDay">Birth Day</label>
+        <input type="text" class="form-control info_input"
+               id="inputBirthDay"
+               name="birthDay"
+               formControlName="birthDay"
+               required>
+
+      </div>
+
+      <div class="form-group text-center">
+        <button class="services_button button button-without-border"><a><span>New pet</span><span>Add New Pet</span></a></button>
+      </div>
+    </form>
+  </div>
+</div>
+
