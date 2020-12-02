@@ -2,7 +2,7 @@
   <div class="info_form_container">
     <div class="info_form_title">Add new Pet</div>
     <div class="row-empty-big"></div>
-    <form [formGroup]="petForm" (submit)="save(petForm)">
+    <form [formGroup]="petForm" *ngIf="petForm" (submit)="save(petForm)">
 
       <div class="form-group">
         <label for="inputName">Name</label>
@@ -24,13 +24,12 @@
       </div>
 
       <div class="form-group">
-        <label for="inputBirthDay">Birth Day</label>
-        <input type="text" class="form-control info_input"
-               id="inputBirthDay"
-               name="birthDay"
-               formControlName="birthDay"
+        <label for="inputBirthDate">Birth Date</label>
+        <input type="date" class="form-control info_input"
+               id="inputBirthDate"
+               name="birthDate"
+               formControlName="birthDate"
                required>
-
       </div>
 
       <div class="form-group text-center">

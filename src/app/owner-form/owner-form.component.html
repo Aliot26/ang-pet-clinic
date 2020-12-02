@@ -1,6 +1,6 @@
 <div class="container">
   <div class="info_form_container">
-    <div class="info_form_title">Edit {{owner["firstName"]}} {{owner.lastName}} Details</div>
+    <div class="info_form_title">Edit {{owner.firstName}} {{owner.lastName}} Details</div>
     <div class="row-empty-big"></div>
     <form *ngIf="ownerForm" [formGroup]="ownerForm" (submit)="edit(ownerForm)">
 

@@ -20,6 +20,7 @@ export class OwnerDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
+    console.log(this.id);
     this.ownerDetailsService.getOwnerById(this.id).subscribe(data => {
         this.owner = data;
         console.log(this.owner);

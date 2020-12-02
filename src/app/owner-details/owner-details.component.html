@@ -12,62 +12,48 @@
     </tr>
     <tr>
       <th>Address</th>
-      <td >{{owner.address}}</td>
+      <td>{{owner.address}}</td>
     </tr>
     <tr>
       <th>City</th>
-      <td >{{owner.city}}</td>
+      <td>{{owner.city}}</td>
     </tr>
     <tr>
       <th>Telephone</th>
-      <td >{{owner.telephone}}</td>
+      <td>{{owner.telephone}}</td>
     </tr>
   </table>
 </div>
-<div class="button services_button"><a routerLink="/owner-edit/{{owner.id}}"><span>Edit Owner</span><span>Edit Owner</span></a></div>
-<div class="row-empty"></div>
-<div class="button services_button"><a routerLink="/pet-form/{{owner.id}}"><span>New Pet</span><span>Add New Pet</span></a></div>
+<div class="button services_button"><a
+  routerLink="/owner-edit/{{owner.id}}"><span>Edit Owner</span><span>Edit Owner</span></a></div>
+
 
 
 <div class="row-empty-big"></div>
-<h2>Pets and Visits</h2>
+<div class="row">
+  <div class="col text-center">
+    <div class="section_title">Pets and Visits</div>
+  </div>
+</div>
 <div class="row-empty"></div>
+<div class="button services_button"><a routerLink="/pet-form/{{owner.id}}"><span>New Pet</span><span>Add New Pet</span></a>
+</div>
+<div class="row-empty"></div>
+
+
 <div class="row">
   <table class="table table-striped">
-
     <tr>
-      <td valign="top" *ngFor="let pet of owner.pets">
-        <dl class="dl-horizontal">
-          <dt>Name</dt>
-          <dd>{{pet.name}}</dd>
-          <dt>Birth Date</dt>
-          <dd>{{pet.birthDate}}</dd>
-          <dt>Type</dt>
-          <dd>{{pet.petType.name}}</dd>
-        </dl>
-      </td>
-      <td valign="top">
-        <table class="table-condensed">
-          <thead>
-          <tr>
-            <th>Visit Date</th>
-            <th>Description</th>
-          </tr>
-          </thead>
-          <tr>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="button services_button "><a href="#"><span>Edit Pet</span><span>Edit Pet</span></a></div>
-            </td>
-            <td>
-              <div class="button services_button "><a href="#"><span>Add Visit</span><span>Add Visit</span></a></div>
-            </td>
-          </tr>
-        </table>
-      </td>
+      <th>Name</th>
+      <th>Birth Date</th>
+      <th>Type</th>
+    </tr>
+    <tr *ngFor="let pet of owner.pets">
+      <td>{{pet.name}}</td>
+      <td>{{pet.birthDate}}</td>
+      <td>{{pet.petType.name}}</td>
+      <td><div class="button services_button "><a href="#"><span>Edit Pet</span><span>Edit Pet</span></a></div></td>
+      <td><div class="button services_button "><a href="#"><span>Add Visit</span><span>Add Visit</span></a></div></td>
     </tr>
 
   </table>
