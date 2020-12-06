@@ -19,15 +19,28 @@ export class OwnerDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.refreshOwnerDetails();
+  }
+
+  refreshOwnerDetails(): void {
     this.id = this.route.snapshot.params['id'];
-    console.log(this.id);
     this.ownerDetailsService.getOwnerById(this.id).subscribe(data => {
         this.owner = data;
-        console.log(this.owner);
       },
       err => {
         this.owner = JSON.parse(err.error).message;
       });
   }
 
+  editOwner(ownerId): void {
+    this.router.navigate(['owner-edit', ownerId]);
+  }
+
+  addPet(ownerId): void {
+    this.router.navigate(['pet-form', ownerId, -1]);
+  }
+
+  editPet(ownerId, petId): void {
+    this.router.navigate(['pet-form', ownerId, petId]);
+  }
 }

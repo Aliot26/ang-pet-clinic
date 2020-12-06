@@ -15,6 +15,13 @@ export class PetDetailsService {
 
   public addPet(pet): Observable<any> {
     return this.http.post<Pet>(`${API_URL}/pets`, pet);
+  }
 
+  public editPet(pet, petId): Observable<any> {
+    return this.http.patch<Pet>(`${API_URL}/pets/` + petId, pet);
+  }
+
+  public getPet(id): Observable<any> {
+    return this.http.get<Pet>(`${API_URL}/pets/` + id);
   }
 }

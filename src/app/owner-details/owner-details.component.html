@@ -24,9 +24,8 @@
     </tr>
   </table>
 </div>
-<div class="button services_button"><a
-  routerLink="/owner-edit/{{owner.id}}"><span>Edit Owner</span><span>Edit Owner</span></a></div>
-
+<div class="button services_button" (click)="editOwner(owner.id)"><a><span>Edit Owner</span><span>Edit Owner</span></a>
+</div>
 
 
 <div class="row-empty-big"></div>
@@ -36,13 +35,13 @@
   </div>
 </div>
 <div class="row-empty"></div>
-<div class="button services_button"><a routerLink="/pet-form/{{owner.id}}"><span>New Pet</span><span>Add New Pet</span></a>
+<div class="button services_button" (click)="addPet(owner.id)"><a><span>New Pet</span><span>Add New Pet</span></a>
 </div>
 <div class="row-empty"></div>
 
 
 <div class="row">
-  <table class="table table-striped">
+  <table class="table table-striped table-bottom-empty">
     <tr>
       <th>Name</th>
       <th>Birth Date</th>
@@ -52,9 +51,14 @@
       <td>{{pet.name}}</td>
       <td>{{pet.birthDate}}</td>
       <td>{{pet.petType.name}}</td>
-      <td><div class="button services_button "><a href="#"><span>Edit Pet</span><span>Edit Pet</span></a></div></td>
-      <td><div class="button services_button "><a href="#"><span>Add Visit</span><span>Add Visit</span></a></div></td>
+      <td>
+        <div class="button services_button" (click)="editPet(owner.id, pet.id)"><a><span>Edit Pet</span><span>Edit Pet</span></a></div>
+      </td>
+      <td>
+        <div class="button services_button "><a href="#"><span>Add Visit</span><span>Add Visit</span></a></div>
+      </td>
     </tr>
 
   </table>
+
 </div>

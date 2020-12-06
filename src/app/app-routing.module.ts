@@ -14,7 +14,7 @@ const routes: Routes = [
   {path: 'vets', component: VetsComponent},
   {path: 'owner/:id', component: OwnerDetailsComponent},
   {path: 'owner-edit/:id', component: OwnerFormComponent},
-  {path: 'pet-form/:id', component: PetFormComponent},
+  {path: 'pet-form/:owner-id/:id', component: PetFormComponent},
   {path: 'err', component: ErrorComponent}
 ];
 
