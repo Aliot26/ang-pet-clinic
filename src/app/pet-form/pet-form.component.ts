@@ -71,4 +71,26 @@ export class PetFormComponent implements OnInit {
     }
   }
 
+  save(petForm): void {
+    console.log(petForm);
+    this.pet.id = this.petId;
+    this.pet.name = this.petForm.value.name;
+    this.pet.owner = this.owner;
+    this.pet.birthDate = this.petForm.value.birthDate;
+    const petTypePet = this.petTypes.find(i => i.name === this.petForm.value.petTypes);
+    this.pet.petType = petTypePet;
+    console.log(petTypePet);
+
+    if (this.pet.id != -1) {
+      this.petService.editPet(this.pet, this.petId)
+        .subscribe(data => {
+          this.router.navigate(['owner/' + this.owner.user.id]);
+        });
+    }else{
+      this.petService.addPet(this.pet)
+        .subscribe( data => {
+          this.router.navigate(['owner/' + this.owner.user.id]);
+        });
+    }
+  }
 }

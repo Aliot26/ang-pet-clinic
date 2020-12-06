@@ -24,7 +24,6 @@ export class OwnerFormComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
     console.log(this.id);
-    console.log(this.owner);
     if (this.id != -1) {
       console.log('in if');
       this.ownerDetailsService.getOwnerByOwnerId(this.id).subscribe(data => {

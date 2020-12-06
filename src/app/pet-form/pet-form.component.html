@@ -2,7 +2,7 @@
   <div class="info_form_container">
     <div class="info_form_title">Add new Pet</div>
     <div class="row-empty-big"></div>
-    <form [formGroup]="petForm" *ngIf="petForm" >
+    <form [formGroup]="petForm" *ngIf="petForm" (submit)="save(petForm)">
 
       <div class="form-group">
         <label for="inputName">Name</label>
